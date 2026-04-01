@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class TodoController {
     }
 
     @PostMapping
-    public Todo create(@RequestBody Todo todo) {
+    public Todo create(@Valid @RequestBody Todo todo) {
         return todoRepository.save(todo);
     }
 
